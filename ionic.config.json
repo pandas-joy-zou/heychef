@@ -1,0 +1,7 @@
+{
+  "name": "heychef",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
