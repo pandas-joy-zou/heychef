@@ -1,53 +1,158 @@
 .home-title {
-    font-size: 28px;
-    font-weight: bold;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .home-searchbar {
-    padding-bottom: 16px;
+  padding-bottom: 16px;
 }
 
 .recipe-card {
-    margin-bottom: 12px;
-    cursor: pointer;
+  margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .recipe-card-content {
-    display: flex;
-    align-items: center;
-    padding: 16px;
+  display: flex;
+  align-items: center;
+  padding: 16px;
 }
 
 .recipe-image-box {
-    font-size: 48px;
-    margin-right: 16px;
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f5f5f5;
-    border-radius: 12px;
+  font-size: 48px;
+  margin-right: 16px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 12px;
 }
 
 .recipe-info {
-    flex: 1;
+  flex: 1;
 }
 
 .recipe-name {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
 }
 
 .recipe-description,
 .recipe-time {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
+  font-size: 14px;
+  color: #666;
+  margin: 0;
 }
 
 .no-results {
-    text-align: center;
-    margin-top: 40px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.listening-page {
+  --background: #2a2a2a;
+}
+
+.listening-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+}
+
+.listening-title {
+  font-size: 32px;
+  margin-bottom: 48px;
+  font-weight: 300;
+}
+
+.mic-wrapper {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.mic-pulse-1,
+.mic-pulse-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.mic-pulse-1 {
+  width: 160px;
+  height: 160px;
+  background: rgba(91, 159, 237, 0.3);
+}
+
+.mic-pulse-2 {
+  width: 120px;
+  height: 120px;
+  background: rgba(91, 159, 237, 0.5);
+  animation-delay: 0.3s;
+}
+
+.mic-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #5b9fed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.mic-icon {
+  font-size: 40px;
+  color: white;
+}
+
+.listening-tip {
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 32px;
+  text-align: center;
+  padding: 0 32px;
+}
+
+.stop-button {
+  width: 64px;
+  height: 64px;
+  --border-radius: 50%;
+}
+
+.stop-button-icon {
+  font-size: 28px;
+}
+
+.wakeword-hint {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #999;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
 }
