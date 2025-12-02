@@ -1,16 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonButton,
-  IonBackButton,
-  IonButtons,
-  IonText,
-  IonIcon,
-} from "@ionic/react";
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonBackButton, IonButtons, IonText, IonIcon, } from "@ionic/react";
 import { mic } from "ionicons/icons";
 import { useNavigate } from "react-router-dom";
 import { voiceService } from "../services/voiceService";
