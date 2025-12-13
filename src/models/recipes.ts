@@ -13,7 +13,7 @@ export const sampleRecipes: Recipe[] = [
         id: '1',
         name: 'Spaghetti Carbonara',
         description: 'Classic Italian Pasta Dish',
-        image: '🍝',
+        image: "/public/spaghetti_carbonara.jpg",
         estimatedTime: '25 minutes',
         ingredients: [
             'Spaghetti - 400g',
@@ -42,7 +42,7 @@ export const sampleRecipes: Recipe[] = [
         id: '2',
         name: 'Chicken Stir-Fry',
         description: 'Quick and Healthy Asian-Inspired Dish',
-        image: '🍗',
+        image: "/public/chicken_stir_fry.jpeg",
         estimatedTime: '20 minutes',
         ingredients: [
             'Chicken Breast - 500g sliced',
@@ -72,7 +72,7 @@ export const sampleRecipes: Recipe[] = [
         id: '3',
         name: 'Vegetable Curry',
         description: 'Aromatic and Flavorful Indian Curry',
-        image: '🍛',
+        image: "/public/vegetable_curry.jpg",
         estimatedTime: '40 minutes',
         ingredients: [
             'Cauliflower - 2 cups florets',
@@ -102,7 +102,7 @@ export const sampleRecipes: Recipe[] = [
         id: '4',
         name: 'Avocado Toast with Egg',
         description: 'Simple and healthy breakfast option',
-        image: '🥑',
+        image: "/public/avocado_toast.jpg",
         estimatedTime: '10 minutes',
         ingredients: [
             'Bread Slices - 2',
@@ -127,7 +127,7 @@ export const sampleRecipes: Recipe[] = [
         id: '5',
         name: 'Beef Tacos',
         description: 'Flavorful Mexican-Style Tacos with Seasoned Beef',
-        image: '🌮',
+        image: "/public/beef_tacos.jpg",
         estimatedTime: '25 minutes',
         ingredients: [
             'Ground Beef - 400g',
@@ -154,7 +154,7 @@ export const sampleRecipes: Recipe[] = [
         id: '6',
         name: 'Shrimp Fried Rice',
         description: 'Classic Takeout-Styled Fried Rice',
-        image: '🍤',
+        image: "/public/shrimp_fried_rice.jpg",
         estimatedTime: '20 minutes',
         ingredients: [
             'Shrimp - 300g peeled & deveined',
@@ -182,7 +182,7 @@ export const sampleRecipes: Recipe[] = [
         id: '7',
         name: 'Pancakes',
         description: 'Fluffy Homemade Breakfast Pancakes',
-        image: '🥞',
+        image: "/public/pancakes.jpg",
         estimatedTime: '15 minutes',
         ingredients: [
             'All-Purpose Flour - 1 cup',
@@ -208,7 +208,7 @@ export const sampleRecipes: Recipe[] = [
         id: '8',
         name: 'Garlic Butter Salmon',
         description: 'Tender Salmon Baked with Garlic and Herbs',
-        image: '🐟',
+        image: "/public/garlic_butter_salmon.jpg",
         estimatedTime: '20 minutes',
         ingredients: [
             'Salmon Fillets - 2',
