@@ -25,7 +25,7 @@ const RecipeDetail: React.FC = () => {
   const timer_active_ref = React.useRef(false);
   const timer_paused_ref = React.useRef(false);
   const current_step_ref = React.useRef(-1);
-
+  
   useEffect(() => {
     current_step_ref.current = current_step;
   }, [current_step]);
@@ -361,36 +361,37 @@ const RecipeDetail: React.FC = () => {
           </IonButtons>
           <IonTitle>{recipe.name}</IonTitle>
         </IonToolbar>
-
-        <div className="header-timer">
-          <div className={`header-timer-box ${timer_active ? "active" : "inactive"}`} onClick={() => timer_active && set_timer_expanded(true)}>⏱ {Math.floor(timer_remaining / 60)}:{(timer_remaining % 60).toString().padStart(2, "0")}</div>
-        </div>
       </IonHeader>
-
-      <IonContent fullscreen className="ion-padding">
-        <IonCard>
+      <IonContent fullscreen className="ion-padding recipe-content">
+        <div className="recipe-banner" style={{ backgroundImage: `url(${recipe.image})` }} />
+        <div className="timer-row">
+          <div className={`timer-pill ${timer_active ? "active" : "inactive"}`} onClick={() => timer_active && set_timer_expanded(true)}>⏱ {Math.floor(timer_remaining / 60)}:{(timer_remaining % 60).toString().padStart(2, "0")}</div>
+        </div>
+        <h2 className="section-title">Ingredients ({recipe.ingredients.length})</h2>
+        <IonCard className="section-card">
           <IonCardContent>
-            <div className="ingredients-header">
-              <h2 className="ingredients-title">Ingredients ({recipe.ingredients.length})</h2>
-              <IonIcon icon={chevronForward} />
-            </div>
-
             <IonList className="ingredients-list">
-              {recipe.ingredients.map((ingredient, idx) => (
-                <IonItem key={idx} lines="none" className="ingredient-item">
-                  <IonLabel className="ingredient-label">• {ingredient}</IonLabel>
-                </IonItem>
-              ))}
+              {recipe.ingredients.map((ingredient, idx) => {
+                const parts = ingredient.split(" - ");
+                const name = parts[0]?.trim() ?? ingredient;
+                const amount = parts.slice(1).join(" - ").trim();
+                return (
+                  <IonItem key={idx} lines="none" className="ingredient-item">
+                    <div className="ingredient-row">
+                      <span className="ingredient-name">{name}</span>
+                      <span className="ingredient-amount">{amount}</span>
+                    </div>
+                  </IonItem>
+                );
+              })}
             </IonList>
           </IonCardContent>
         </IonCard>
 
+        <h2 className="section-title">Steps</h2>
         <div className="steps-section">
-          <h2 className="steps-title">Steps</h2>
-
           {recipe.steps.map((step, index) => (
-            <IonCard
-              key={index} className={`step-card ${current_step === index ? "step-active" : ""}`}>
+            <IonCard key={index} className={`step-card ${current_step === index ? "step-active" : ""}`}>
               <IonCardContent>
                 <div className="step-row">
                   <div className={`step-circle ${current_step === index ? "active" : ""}`}>{index + 1}</div>

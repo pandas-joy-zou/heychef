@@ -185,12 +185,6 @@
   margin-bottom: 24px;
 }
 
-.ingredients-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
 .ingredient-text {
   white-space: normal;
 }
@@ -222,21 +216,10 @@
   --background: #e3f2fd !important;
 }
 
-.step-row {
-  display: flex;
-  gap: 12px;
-}
-
 .step-chip {
   min-width: 32px;
   height: 32px;
   margin-top: 4px;
-}
-
-.step-text {
-  margin: 8px 0;
-  font-size: 16px;
-  color: #666;
 }
 
 .step-text.bold {
@@ -311,38 +294,13 @@
   margin-bottom: 12px;
 }
 
-.ingredients-title {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
 .ingredients-list {
   padding: 0;
-}
-
-.ingredient-item {
-  padding: 4px 0;
+  margin-top: 6px;
 }
 
 .ingredient-label {
   font-size: 14px;
-}
-
-.steps-section {
-  margin-top: 16px;
-}
-
-.steps-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.step-card {
-  margin-bottom: 12px;
-  background: white;
-  border: none;
 }
 
 .step-card.step-active {
@@ -350,33 +308,9 @@
   border: 2px solid #2196f3;
 }
 
-.step-row {
-  display: flex;
-}
-
-.step-circle {
-  min-width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #e0e0e0;
-  color: #666;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 600;
-  margin-right: 12px;
-}
-
 .step-circle.active {
   background: #2196f3;
   color: white;
-}
-
-.step-text {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.5;
 }
 
 .mic-container {
@@ -406,4 +340,165 @@
 
 .bottom-padding {
   height: 120px;
+}
+
+.recipe-content {
+  --background: #f7f7f9;
+}
+
+.recipe-banner {
+  height: 240px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  position: relative;
+}
+
+.timer-pill.inactive {
+  opacity: 0.85;
+  cursor: default;
+}
+
+.ingredients-card {
+  margin-top: -6px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.ingredients-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #222;
+  letter-spacing: 0.2px;
+}
+
+.ingredient-item {
+  padding: 4px 0;
+  --min-height: 34px;
+}
+
+.steps-section {
+  margin-top: 14px;
+}
+
+.steps-title {
+  margin: 14px 4px 8px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #222;
+}
+
+.step-card {
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+.step-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.step-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  background: #efeff4;
+  color: #444;
+  flex-shrink: 0;
+}
+
+.step-active {
+  border: 2px solid rgba(0,0,0,0.08);
+}
+
+.step-text {
+  margin: 2px 0 0;
+  font-size: 15px;
+  line-height: 1.35;
+  color: #333;
+}
+
+.ingredient-row {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.ingredient-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+.ingredient-amount {
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.timer-row {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0 16px;
+}
+
+.section-title {
+  margin: 14px 4px 8px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #222;
+}
+
+.section-card {
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.header-timer,
+.header-timer-box {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+.timer-pill {
+  border-radius: 999px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 10px;          
+  font-size: 20px;
+  padding: 16px 26px;
+}
+
+.sort-tabs {
+  width: 100%;
+  margin: 10px 0 14px;
+  --background: #f2f2f2;
+  border-radius: 14px;
+}
+
+.sort-tabs-wrapper {
+  padding: 0 12px;   
+}
+
+.sort-tabs {
+  width: 100%;
+  max-width: 100%;
+  margin: 8px auto 14px;
+  --background: #f2f2f2;
+  border-radius: 14px;
 }
