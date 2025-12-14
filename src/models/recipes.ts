@@ -8,12 +8,21 @@ export interface Recipe {
     steps: string[];
 }
 
+const spaghetti_carbonara = new URL("../assets/images/spaghetti_carbonara.jpg", import.meta.url).href;
+const chicken_stir_fry = new URL("../assets/images/chicken_stir_fry.jpg", import.meta.url).href;
+const vegetable_curry = new URL("../assets/images/vegetable_curry.jpg", import.meta.url).href;
+const avocado_toast = new URL("../assets/images/avocado_toast.jpg", import.meta.url).href;
+const beef_tacos = new URL("../assets/images/beef_tacos.jpg", import.meta.url).href;
+const shrimp_fried_rice = new URL("../assets/images/shrimp_fried_rice.jpg", import.meta.url).href;
+const pancakes = new URL("../assets/images/pancakes.jpg", import.meta.url).href;
+const garlic_butter_salmon = new URL("../assets/images/garlic_butter_salmon.jpg", import.meta.url).href;
+
 export const sampleRecipes: Recipe[] = [
     {
         id: '1',
         name: 'Spaghetti Carbonara',
         description: 'Classic Italian Pasta Dish',
-        image: "/public/spaghetti_carbonara.jpg",
+        image: spaghetti_carbonara,
         estimatedTime: '25 minutes',
         ingredients: [
             'Spaghetti - 400g',
@@ -42,7 +51,7 @@ export const sampleRecipes: Recipe[] = [
         id: '2',
         name: 'Chicken Stir-Fry',
         description: 'Quick and Healthy Asian-Inspired Dish',
-        image: "/public/chicken_stir_fry.jpeg",
+        image: chicken_stir_fry,
         estimatedTime: '20 minutes',
         ingredients: [
             'Chicken Breast - 500g sliced',
@@ -72,7 +81,7 @@ export const sampleRecipes: Recipe[] = [
         id: '3',
         name: 'Vegetable Curry',
         description: 'Aromatic and Flavorful Indian Curry',
-        image: "/public/vegetable_curry.jpg",
+        image: vegetable_curry,
         estimatedTime: '40 minutes',
         ingredients: [
             'Cauliflower - 2 cups florets',
@@ -102,7 +111,7 @@ export const sampleRecipes: Recipe[] = [
         id: '4',
         name: 'Avocado Toast with Egg',
         description: 'Simple and healthy breakfast option',
-        image: "/public/avocado_toast.jpg",
+        image: avocado_toast,
         estimatedTime: '10 minutes',
         ingredients: [
             'Bread Slices - 2',
@@ -127,7 +136,7 @@ export const sampleRecipes: Recipe[] = [
         id: '5',
         name: 'Beef Tacos',
         description: 'Flavorful Mexican-Style Tacos with Seasoned Beef',
-        image: "/public/beef_tacos.jpg",
+        image: beef_tacos,
         estimatedTime: '25 minutes',
         ingredients: [
             'Ground Beef - 400g',
@@ -154,7 +163,7 @@ export const sampleRecipes: Recipe[] = [
         id: '6',
         name: 'Shrimp Fried Rice',
         description: 'Classic Takeout-Styled Fried Rice',
-        image: "/public/shrimp_fried_rice.jpg",
+        image: shrimp_fried_rice,
         estimatedTime: '20 minutes',
         ingredients: [
             'Shrimp - 300g peeled & deveined',
@@ -182,7 +191,7 @@ export const sampleRecipes: Recipe[] = [
         id: '7',
         name: 'Pancakes',
         description: 'Fluffy Homemade Breakfast Pancakes',
-        image: "/public/pancakes.jpg",
+        image: pancakes,
         estimatedTime: '15 minutes',
         ingredients: [
             'All-Purpose Flour - 1 cup',
@@ -208,7 +217,7 @@ export const sampleRecipes: Recipe[] = [
         id: '8',
         name: 'Garlic Butter Salmon',
         description: 'Tender Salmon Baked with Garlic and Herbs',
-        image: "/public/garlic_butter_salmon.jpg",
+        image: garlic_butter_salmon,
         estimatedTime: '20 minutes',
         ingredients: [
             'Salmon Fillets - 2',
