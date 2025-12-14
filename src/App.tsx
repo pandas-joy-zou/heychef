@@ -17,7 +17,6 @@ import "@ionic/react/css/display.css";
 
 import Home from "./pages/Home";
 import RecipeDetail from "./pages/RecipeDetail";
-import Listening from "./pages/Listening";
 
 setupIonicReact({ mode: "ios" });
 
@@ -28,7 +27,6 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/home" element={<IonPage><Home /></IonPage>} />
           <Route path="/recipe/:id" element={<IonPage><RecipeDetail /></IonPage>} />
-          <Route path="/listening" element={<IonPage><Listening /></IonPage>} />
           <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>
       </BrowserRouter>
