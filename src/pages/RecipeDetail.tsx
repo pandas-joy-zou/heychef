@@ -25,7 +25,8 @@ const RecipeDetail: React.FC = () => {
   const timer_active_ref = React.useRef(false);
   const timer_paused_ref = React.useRef(false);
   const current_step_ref = React.useRef(-1);
-  
+  const content_ref = React.useRef<HTMLIonContentElement | null>(null);
+
   useEffect(() => {
     current_step_ref.current = current_step;
   }, [current_step]);
@@ -226,6 +227,30 @@ const RecipeDetail: React.FC = () => {
       return;
     }
 
+    if (final === "down" || final.includes("scroll down") || final.includes("go down")) {
+      scroll_by(450);
+      safe_speak("Scrolling down.");
+      return;
+    }
+
+    if (final === "up" || final.includes("scroll up") || final.includes("go up")) {
+      scroll_by(-450);
+      safe_speak("Scrolling up.");
+      return;
+    }
+
+    if (final.includes("top") || final.includes("go to top")) {
+      scroll_to_top();
+      safe_speak("Going to the top.");
+      return;
+    }
+
+    if (final.includes("bottom") || final.includes("go to bottom")) {
+      scroll_to_bottom();
+      safe_speak("Going to the bottom.");
+      return;
+    }
+
     safe_speak("Sorry, I didn’t understand that. Try saying: start recipe, next step, set a timer for 2 minutes, repeat step, or ingredients list.");
   };
 
@@ -298,6 +323,26 @@ const RecipeDetail: React.FC = () => {
     safe_speak("I couldn't find that ingredient in this recipe.");
   };
 
+  const scroll_by = async (delta_y: number) => {
+    const cur = content_ref.current;
+    if (!cur) return;
+
+    const scroll = await cur.getScrollElement();
+    scroll.scrollBy({ top: delta_y, left: 0, behavior: "smooth" });
+  };
+
+  const scroll_to_top = async () => {
+    const cur = content_ref.current;
+    if (!cur) return;
+    await cur.scrollToTop(400);
+  };
+
+  const scroll_to_bottom = async () => {
+    const cur = content_ref.current;
+    if (!cur) return;
+    await cur.scrollToBottom(400);
+  };
+
   const start_timer = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -362,7 +407,7 @@ const RecipeDetail: React.FC = () => {
           <IonTitle>{recipe.name}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen className="ion-padding recipe-content">
+      <IonContent ref={content_ref} fullscreen className="ion-padding recipe-content">
         <div className="recipe-banner" style={{ backgroundImage: `url(${recipe.image})` }} />
         <div className="timer-row">
           <div className={`timer-pill ${timer_active ? "active" : "inactive"}`} onClick={() => timer_active && set_timer_expanded(true)}>⏱ {Math.floor(timer_remaining / 60)}:{(timer_remaining % 60).toString().padStart(2, "0")}</div>
