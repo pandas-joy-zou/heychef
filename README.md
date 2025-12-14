@@ -1,43 +1,48 @@
 # Project: Hey Chef
-A hands-free, voice-controlled recipe assistant built with React, TypeScript, Ionic, and Capacitor.Hey Chef lets users navigate recipes, ask ingredient questions, and manage timers using only their voice. It is designed for hands-busy cooking environments where touch interaction is difficult or inconvenient.
-
----
+Hey Chef lets users navigate recipes, ask ingredient questions, and manage timers through voice recognition. It is designed for hands-busy cooking environments where touch interaction is difficult or inconvenient. This application is a hands-free, voice-controlled recipe assistant built with React, TypeScript, Ionic, and Capacitor.
 
 ## Features
 
-### **Voice-controlled navigation**
+### **Voice-Controlled Navigation**
 - Start a recipe  
 - Go to next / previous step  
 - Repeat instructions  
-- Ask **“How much ___ do I need?”**
+- Ask “How much {ingredient_name} do I need?”
+- Scrolling up/down
 
-### **Hands-free timer management**
+### **Hands-Free Timer Management**
 - Set, cancel, pause, resume, or adjust timers  
 - Supports natural phrasing (e.g., “set a two-minute timer”)  
 
-### **Wake-word activation**
+### **Wake-Word Activation**
 - Tap the microphone once  
 - Say **“Hey Chef”** to enter continuous listening mode  
 
-### **Simple, clean UI**
+### **Simple, Clean UI**
 - Highlighted current step  
 - Minimal home screen  
 - Animated microphone feedback  
 
-### **Local recipe data model**
+### **Local Recipe Data Model**
 - Stored in TypeScript  
 - Fast lookup for ingredient queries  
-
----
 
 ## Project Structure
 
 ```
 src/
 │
+├── images/
+│   ├── avocado_toast.jpg
+│   ├── beef_tacos.jpg
+│   ├── chicken_stir_fry.jpeg
+│   ├── garlic_butter_salmon.jpg
+│   ├── pancakes.jpg
+│   ├── shrimp_fried_rice.jpg
+│   ├── spaghetti_carbonara.jpg
+│   └── vegetable_curry.jpg
+|
 ├── components/
-│   ├── ExploreContainer.css
-│   ├── ExploreContainer.tsx
 │   └── VoiceListener.tsx
 │
 ├── models/
@@ -46,7 +51,6 @@ src/
 ├── pages/
 │   ├── Home.css
 │   ├── Home.tsx
-│   ├── Listening.tsx
 │   ├── RecipeDetail.tsx
 │   └── RecipeView.tsx
 │
@@ -55,24 +59,27 @@ src/
 │   ├── TimerService.ts
 │   └── voiceService.ts
 │
-├── theme/
-│   └── variables.css
 │
 ├── App.tsx
 ├── main.tsx
-├── App.test.tsx
-├── setupTests.ts
-└── vite-env.d.ts
+└── App.test.tsx
 ```
-
----
 
 ## Folder Overview
 
 ### **components/**
 Reusable UI elements  
 - `VoiceListener.tsx` — microphone UI + animations  
-- `ExploreContainer.tsx` — basic Ionic template  
+
+### **images/**
+- `avocado_toast.jpg` 
+- `beef_tacos.jpg` 
+- `chicken_stir_fry.jpeg` 
+- `garlic_butter_salmon.jpg` 
+- `pancakes.jpg` 
+- `shrimp_fried_rice.jpg` 
+- `spaghetti_carbonara.jpg` 
+- `vegetable_curry.jpg` 
 
 ### **models/**
 - `recipes.ts` — recipe interface + stored recipe list  
@@ -82,7 +89,6 @@ Screens the user interacts with
 - `Home.tsx` — search + recipe list  
 - `RecipeView.tsx` — ingredients + steps + microphone button  
 - `RecipeDetail.tsx` — recipe description  
-- `Listening.tsx` — listening screen feedback  
 
 ### **services/**
 Core logic  
@@ -90,16 +96,10 @@ Core logic
 - `commandParser.ts` — interprets spoken commands  
 - `TimerService.ts` — timer logic  
 
-### **theme/**
-- Global Ionic styling  
-
 ### **App.tsx**
-Routing + primary app structure  
-
----
+Routing and primary application structure  
 
 ## How Voice Commands Work
-
 1. User selects a recipe  
 2. User taps the microphone  
 3. User says **“Hey Chef”** to activate continuous listening  
@@ -107,56 +107,44 @@ Routing + primary app structure
    - “Start recipe”  
    - “Next step”  
    - “Repeat”  
+   - Ingredients list
+   - Scroll up/down
    - “How much salt do I need?”  
    - “Set a timer for 2 minutes”  
 
-#### **Speech processing pipeline**
+#### **Speech Processing Pipeline**
 - `voiceService.ts` → raw transcript  
 - `commandParser.ts` → intent detection  
 - System executes correct action  
 
----
-
 ## Technologies Used
-
 - React + TypeScript  
 - Ionic Framework  
-- Capacitor (iOS speech recognition)  
+- Capacitor (iOS Speech Recognition)  
 - Web Speech API  
 - Vite  
-- Jest  
-
----
 
 ## Installation & Running the App
-
-### **1. Install dependencies**
+### **1. Install Dependencies**
 ```
 npm install
 ```
-
-### **2. Run in browser (development)**
+### **2. Run in Browser (UI Development)**
 ```
 npm run dev
 ```
-
 ### **3. Build**
 ```
 npm run build
 ```
-
 ### **4. Run on iOS**
 ```
 npx cap sync ios
 npx cap open ios
 ```
-
-Then build + run in Xcode.
-
----
+Then build + run in Xcode with selecting your device of choice.
 
 ## Recipe Data Model
-
 ```ts
 export interface Recipe {
   id: string;
@@ -168,6 +156,5 @@ export interface Recipe {
   steps: string[];
 }
 ```
-
 Stored in: `src/models/recipes.ts`
 
