@@ -59,7 +59,6 @@ src/
 │   ├── TimerService.ts
 │   └── voiceService.ts
 │
-│
 ├── App.tsx
 ├── main.tsx
 └── App.test.tsx
